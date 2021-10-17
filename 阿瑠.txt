@@ -1,0 +1,25 @@
+//谱作者：指尖灬旋律丿
+//原视频：BV19v411g78w
+//Red_lnn修改以使程序可以使用
+
+#180
+(CQ) 0 T 0 (VT) 0 R E (BW) Q W E (NQ) 0 0 G
+(VQ) 0 0 W (CQ) 0 0 0 (XQ) W E R (BW) 0 0 0
+
+(AQ) G (ET) G (MT) G (WR) E (NW) (DQ) (HW) E (BG) S 0 G
+(VQ) (AG) D W (CQ) A 0 D (XQ) (NW) (SE) R (BSFW) 0 (BMS) 0
+
+(NA) D (HQ) 0 (BJ) S 0 G
+(VH) A (DG) F (CG) A D 0
+(VH) A (FJ) Q (CG) B A 0
+(XS) V N D (BMS) 0 0 0
+
+(NA) D (HQ) 0 (BJ) S 0 G
+(VH) A (DG) F (CG) A D 0
+(XA) (VS) (ND) F (BMS) 0 0 0
+A (ZAF) B (AD) S D 0 0 0 0
+
+(AQ) 0 T 0 (MT) 0 R E (NW) Q W E (BQ) 0 0 G
+(VQ) 0 0 W (CQ) 0 0 0 (XQ) W E R (BW) 0 0 0
+(ZQ) B (DT) 0 (BMT) 0 (BSR) E (VW) (AQ) (GW) E (CBMQ) 0 0 G
+(XQ) N S E (BMSW) 0 0 0 Q (ZQ) B S F (ZBAD)

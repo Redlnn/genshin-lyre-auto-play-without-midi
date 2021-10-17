@@ -1,0 +1,85 @@
+//谱作者：指尖灬旋律丿
+//原视频：BV1DN411Z7Pa
+//Red_lnn修改以使程序可以使用
+
+#130
+(ET) (QE) (ET) (QE) (ET) (QE) (ET) (QE)
+(ZG) B G B H B G B
+(VG) A F A Q A F A
+(BF) S F S W S F S
+(ZF) B D B D B D 0
+(NQ) D Q D J D Q D
+(VE) A F A F A F A
+(BJ) S J S H S J S
+(ZW) B D B D B D 0
+(NQ) D Q D W D Q D
+(VT) A R A E A W Q
+(XT) N R N (BQ) S W S
+(ZQ) B D B D
+
+0 0 0 0
+
+#150 //皎洁的笑颜
+(ZE) G E G E G R G
+(EM) G E G E G Q W
+(EN) G E G E G R G
+(TB) G R G E G W 0
+(QV) G Q G Q G W G
+(QC) G Q G Q G T G
+(QX) G Q W E W Q G
+(BQ) G Q W E W E R
+(ZE) G E G E G R G
+(EM) G E G E G Q W
+(EN) G E G E G R G
+(TB) G T G T R E W
+(QV) G Q G Q G T G
+(QC) G Q G Q G T G
+(QX) G Q W E W Q G
+(QB) G Q T R E W Q
+Z B D B D
+
+0 0 0 0 0 0 0 0
+
+#300 //银白的希望
+A 0 0 0
+E 0 R T 0 0 0 0 0 0 0 M 0 0 0 0 0 0
+Y T 0 R E 0 W Q N 0 0 0
+Q 0 W E 0 0 0 0 0 0 0 B 0 0 0 0 0 0
+R E 0 W Q 0 J H V 0 0 0
+H 0 J Q 0 0 0 Y 0 Y T B 0 0 0 0 0 0
+Y T 0 0 R E 0 0 R
+#330
+A 0 0 0 (AE) 0 R T A 0 0 0 (AE) 0 E W
+M 0 0 0 M 0 Y T M 0 R E M 0 W Q
+N 0 0 0 (NQ) 0 W E N 0 0 0 (NQ) 0 Q J
+B 0 0 0 B 0 R E B 0 W Q B 0 J H
+V 0 0 0 (VH) 0 J Q V 0 0 0 (VH) 0 H G
+B 0 0 0 (BJ) 0 Q W B 0 E Q B 0 J 0
+(ZQ) 0 B 0 (SQ) 0 B 0 (SQ) 0 B 0 (SE) 0 R T
+(BW) 0 S 0 (GW) 0 S 0 (GW) 0 W 0
+(AW) 0 0 0 (AE) 0 R T A 0 0 0 (AE) 0 E W
+M 0 0 0 M 0 Y T M 0 R E M 0 W Q
+N 0 0 0 (NQ) 0 W E N 0 0 0 (NQ) 0 Q J
+B 0 0 0 B 0 R E B 0 W Q B 0 J H
+V 0 0 0 (VH) 0 J Q V 0 0 0 V 0 0 0
+B 0 0 0 (BJ) 0 Q W B 0 E Q B 0 J Q
+
+0 0 0 0 0 0 0 0
+
+#180 //雪掩的往事
+(VE) R E H E R E H E R E H E R E H
+(CE) Y E H E Y E H W Y W H W Y W G
+(XW) E W G W E W G W E W G W E W G
+(ZW) Y W G W Y W G Q Y Q G Q Y Q F
+(BQ) W Q F Q W Q F Q W Q F Q W Q F
+(VQ) T Q F Q T Q F J T J F J T J F
+(CJ) Q J D J Q J D J Q J D J Q J D
+H J H D H J H D H J Q W
+#150
+(CE) Y E H W Y E G
+(XW) E W G W E W G
+(ZW) T W G Q T Q F
+(BQ) W Q F Q W Q F
+(VQ) T Q F J T J D
+(CJ) Q J D J Q J D
+H J H D H J H D
