@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import ctypes
+import logging
 import os
 import random
 import sys
@@ -15,9 +16,14 @@ import regex
 import win32api
 import win32con
 
-from config import BPM, GAME_PROCESS_NAME, MUSIC_SCORE, DRY_RUN
+from config import BPM, GAME_PROCESS_NAME, MUSIC_SCORE, DRY_RUN, DEBUG
 from focus import check_focus, set_focus
 from logger import logger
+
+if DEBUG:
+    logger.setLevel(logging.DEBUG)
+else:
+    logger.setLevel(logging.INFO)
 
 pool = ProcessPoolExecutor(6)
 
@@ -110,45 +116,59 @@ def play(music_score: list) -> None:
     :param music_score: 从谱读到的单个按键组成的列表
     :return: None
     """
+    logger.debug(f'获取到的音符列表如下：{music_score}')
     time.sleep(0.5)
     notes_speed = round(60 / BPM, 5)
     logger.info(f'BPM: {BPM}')
     logger.info(f'每个节拍间隔{notes_speed}s')
     logger.info('准备开始演奏，演奏过程中清保持焦点在游戏窗口')
     time.sleep(0.5)
+    step = 0
 
     for i in music_score:
+        check_focus_on()
+
         if i.startswith('#'):
             notes_speed = round(60 / int(i[1:]), 5)
             logger.info(f'BPM已更改为: {i[1:]}')
             logger.info(f'每个节拍间隔{notes_speed}s')
             continue
         elif i.startswith('//'):
-            logger.info(f'此处有注释：{i[2:]}')
+            logger.info(f'注释 → {i[2:]}')
             continue
         else:
             time.sleep(notes_speed)
+            logger.debug('sleep: %f', notes_speed)
+
+        # 不知道为什么，实际在游戏里按下第一个音的时间会和按下第二个音的时间非常接近，甚至会吞掉
+        # 但是日志里的时间间隔却是正常的
+        # 只能手动加一个延迟
+        if step == 1 and notes_speed <= 0.5:
+            time.sleep(notes_speed / 2)
+            logger.debug('sleep: %f', notes_speed / 2)
 
         if i == '0':
+            logger.debug('此处有空音符')
             pass
         elif i.startswith('(') and i.endswith(')'):
             tmp = i[1:-1]
             if not regex.match('^[a-zA-Z]+', tmp):
                 raise ValueError('乐谱格式错误')
-            logger.info(f'按下按键：{i[1:-1]}')
+            logger.info(f'按下按键组合：{i[1:-1]}')
             if DRY_RUN:
                 continue
             pool.submit(press_and_release_muit_key, tmp)
+            step += 1
             continue
         elif regex.match('^[a-zA-Z]$', i):
             logger.info(f'按下按键：{i}')
             if DRY_RUN:
                 continue
             pool.submit(press_and_release_key, i)
+            step += 1
         else:
             raise ValueError('乐谱格式错误')
-
-        check_focus_on()
+    logger.info(f'演奏完毕，共按下按键 {step} 次')
 
 
 def main() -> None:
@@ -163,7 +183,6 @@ def main() -> None:
     txt = txt.replace('\n', ' ').replace('\r', '').split()
     logger.info('读取完毕')
     play(txt)
-    logger.info('演奏完毕')
 
 
 if __name__ == '__main__':

@@ -3,7 +3,7 @@
 //Red_lnn修改以使程序可以使用
 
 #180
-(CQ) 0 0 T 0 (VT) 0 R E (BW) Q W E (NQ) 0 0 G
+(CQ) 0 T 0 (VT) 0 R E (BW) Q W E (NQ) 0 0 G
 (VQ) 0 0 W (CQ) 0 0 0 (XQ) W E R (BW) 0 0 0
 
 (AQ) G (ET) G (MT) G (WR) E (NW) (DQ) (HW) E (BG) S 0 G

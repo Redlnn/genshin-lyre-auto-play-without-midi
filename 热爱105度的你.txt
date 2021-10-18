@@ -1,0 +1,86 @@
+//谱作者：指尖灬旋律丿
+//原视频：BV18K4y1u7hd
+//Red_lnn修改以使程序可以使用
+
+#300
+E E R E W E (VAH) 0 W Q H 0 Q 0 (BSW) 0
+W W E W Q W (CME) 0 Q H Q 0 Q 0 (NAH) 0
+E E R E W Q (VAE) W 0 E H 0 H Q (BSJ) 0
+J J E 0 E 0 (ZBQ) 0 0 A G J E 0 0 0 0
+
+G (VAT) 0 E (VAW) Q W (VAE) Q (BSW) 0 0
+(BSG) H G (BS) G (CME) 0 E (CMW) E 0
+(CMG) H (ZBG) 0 (ZB) 0 0 (ZBG) 0
+
+(VAT) 0 E (VAW) Q W (VAE) Q (BSW) 0 0
+(BSG) H G (BS) G
+(ZBE) 0 E (ZBW) E 0 (ZBQ) 0 (ZBU) 0 T 0
+
+H 0 J 0 (VAQ) 0 Q (VAJ) Q 0 (VAE) 0 (BSW) 0
+W (BSQ) W 0 (BSJ) 0 (CMQ) 0
+Q (CMJ) Q 0 (CMG) 0 (NAH) 0 0 (NA) 0 0
+(NAH) J (VAQ) 0 Q (VAJ) Q 0 (VAE) 0 (BSW) 0
+W W W (BSQ) (BSJ) W (ZBQ) 0 0
+(ZB) A S (ASG) 0 0 0 0 0
+
+E E R E W E (VAH) 0 W (VAQ) H 0 (VAQ) 0 (BSW) 0
+W (BSW) E W (BSQ) W (CME) 0 Q (CMH) Q 0 (CMQ) 0 (NAH) 0
+E (NAE) R E (NAW) Q (VAE) W 0 (VAE) H 0 (VAH) Q (BSJ) 0
+J (BSJ) E 0 (BSE) 0 (ZBQ) 0 (ZB) 0 0 (ZB) 0 0 (ZB) 0 (ZB) 0
+E E R E W E (VAH) 0 W (VAQ) H 0 (VAQ) 0 (BSW) 0
+W (BSW) E W (BSQ) W (CME) 0 Q (CMH) Q 0 (CMQ) 0 (NAH) 0
+E (NAE) R E (NAW) Q (VAE) W 0 (VAE) H 0 (VAH) Q (BSJ) 0
+J (BSJ) E 0 (BSE) 0 (ZBQ) 0 (ZB) 0 0 (ZB) 0 0 (ZB) 0 (ZB) 0
+
+T E T E W Q (VAH) 0 W (VAQ) H 0 (VAQ) 0
+(BSW) 0 W (BSW) E W (BSQ) W
+(CME) 0 Q (CMH) Q 0 (CMQ) 0
+(NAH) 0 E (NAE) R E (NAW) Q
+(VAE) W 0 (VAE) H 0 (VAH) Q
+(BSJ) 0 J (BSJ) E 0 (BSE) 0
+
+(ZBQ) 0 A (ZB) Q 0 (ZBA) 0 (ZBQ) 0 A (ZB) Q 0 (ZBA) 0
+(VAQ) 0 (VA) 0 0 0 (VAH) 0 (BSG) 0 0 (BSH) D 0 (BS) A
+(ZBA) 0 A (ZB) Q 0 (ZBA) 0 (ZBQ) 0 A (ZB) Q 0 (ZBA) 0
+(VAQ) 0 (VA) 0 0 0 (VAH) 0 (BSG) 0 0 (BSH) D 0 (BS) A
+(ZBA) 0 A (ZB) Q 0 (ZBA) 0 (ZBQ) 0 A (ZB) Q 0 0 0
+
+//===========
+
+(ZBG) (VAT) 0 E (VAW) Q W (VAE) Q (BSW) 0 0
+(BSG) H G (BS) G (CME) 0 E (CMW) E 0
+(CMG) H (ZBG) 0 (ZB) 0 0 (ZBG) 0
+
+(VAT) 0 E (VAW) Q W (VAE) Q (BSW) 0 0
+(BSG) H G (BS) G
+(ZBE) 0 E (ZBW) E 0 (ZBQ) 0 (ZBU) 0 T 0
+
+H 0 J 0 (VAQ) 0 Q (VAJ) Q 0 (VAE) 0 (BSW) 0
+W (BSQ) W 0 (BSJ) 0 (CMQ) 0
+Q (CMJ) Q 0 (CMG) 0 (NAH) 0 0 (NA) 0 0
+(NAH) J (VAQ) 0 Q (VAJ) Q 0 (VAE) 0 (BSW) 0
+W W W (BSQ) (BSJ) W (ZBQ) 0 0
+(ZB) A S (ASG) 0 0 0 0 0
+
+E E R E W E (VAH) 0 W (VAQ) H 0 (VAQ) 0 (BSW) 0
+W (BSW) E W (BSQ) W (CME) 0 Q (CMH) Q 0 (CMQ) 0 (NAH) 0
+E (NAE) R E (NAW) Q (VAE) W 0 (VAE) H 0 (VAH) Q (BSJ) 0
+J (BSJ) E 0 (BSE) 0 (ZBQ) 0 (ZB) 0 0 (ZB) 0 0 (ZB) 0 (ZB) 0
+E E R E W E (VAH) 0 W (VAQ) H 0 (VAQ) 0 (BSW) 0
+W (BSW) E W (BSQ) W (CME) 0 Q (CMH) Q 0 (CMQ) 0 (NAH) 0
+E (NAE) R E (NAW) Q (VAE) W 0 (VAE) H 0 (VAH) Q (BSJ) 0
+J (BSJ) E 0 (BSE) 0 (ZBQ) 0 (ZB) 0 0 (ZB) 0 0 (ZB) 0 (ZB) 0
+
+T E T E W Q (VAH) 0 W (VAQ) H 0 (VAQ) 0
+(BSW) 0 W (BSW) E W (BSQ) W
+(CME) 0 Q (CMH) Q 0 (CMQ) 0
+(NAH) 0 E (NAE) R E (NAW) Q
+(VAE) W 0 (VAE) H 0 (VAH) Q
+(BSJ) 0 J (BSJ) E 0 (BSE) 0
+
+(ZBQ) 0 A (ZB) Q 0 (ZBA) 0 (ZBQ) 0 A (ZB) Q 0 (ZBA) 0
+(VAQ) 0 (VA) 0 0 0 (VAH) 0 (BSG) 0 0 (BSH) D 0 (BS) A
+(ZBA) 0 A (ZB) Q 0 (ZBA) 0 (ZBQ) 0 A (ZB) Q 0 (ZBA) 0
+(VAQ) 0 (VA) 0 0 0 (VAH) 0 (BSG) 0 0 (BSH) D 0 (BS) A
+(ZBA) 0 A (ZB) Q 0 (ZBA) 0 (ZBQ) 0 (ZBA) 0 (ZBQ) 0 0 0 0
+H 0 G 0 0 H 0 0 M 0 0 S 0 0 0 A

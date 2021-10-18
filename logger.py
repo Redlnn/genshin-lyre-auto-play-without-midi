@@ -25,4 +25,3 @@ console_handler.setFormatter(ColoredFormatter(console_fms,
                                               secondary_log_colors={},
                                               style='%'))
 logger.addHandler(console_handler)
-logger.setLevel(logging.INFO)
