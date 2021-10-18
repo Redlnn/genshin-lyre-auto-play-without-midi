@@ -1,0 +1,4 @@
+regex ~= 2021.10.8
+pypiwin32 ~= 223
+pywin32 ~= 302
+pywin32-ctypes ~= 0.2.0

@@ -2,7 +2,7 @@
 //原视频：BV1DN411Z7Pa
 //Red_lnn修改以使程序可以使用
 
-#130
+#110
 (ET) (QE) (ET) (QE) (ET) (QE) (ET) (QE)
 (ZG) B G B H B G B
 (VG) A F A Q A F A
@@ -19,7 +19,7 @@
 
 0 0 0 0
 
-#150 //皎洁的笑颜
+#200 //皎洁的笑颜
 (ZE) G E G E G R G
 (EM) G E G E G Q W
 (EN) G E G E G R G
@@ -36,7 +36,7 @@
 (QC) G Q G Q G T G
 (QX) G Q W E W Q G
 (QB) G Q T R E W Q
-Z B D B D
+Z 0 B 0 D 0 B 0 D
 
 0 0 0 0 0 0 0 0
 
