@@ -167,7 +167,6 @@ def main() -> None:
 
 
 if __name__ == '__main__':
-    DRY_RUN = False
     if ctypes.windll.shell32.IsUserAnAdmin() or DRY_RUN:
         if not DRY_RUN:
             if not set_focus('YuanShen.exe'):
