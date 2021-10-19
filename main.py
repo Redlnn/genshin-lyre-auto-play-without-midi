@@ -1,24 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from __future__ import annotations
-
 import ctypes
 import logging
 import os
-import random
+import regex
 import sys
 import time
 import traceback
 from concurrent.futures import ProcessPoolExecutor
 
-import regex
-import win32api
-import win32con
-
-from config import BPM, GAME_PROCESS_NAME, MUSIC_SCORE, DRY_RUN, DEBUG
-from focus import check_focus, set_focus
-from logger import logger
+from config import BPM, DEBUG, DRY_RUN, GAME_PROCESS_NAME, MUSIC_SCORE
+from utils.focus import check_focus, set_focus
+from utils.logger import logger
+from utils.pressKey import press_and_release_key, press_and_release_muit_key
 
 if DEBUG:
     logger.setLevel(logging.DEBUG)
@@ -27,73 +22,10 @@ else:
 
 pool = ProcessPoolExecutor(6)
 
-key_map = {
-    'A': 65, 'B': 66, 'C': 67, 'D': 68, 'E': 69, 'F': 70, 'G': 71, 'H': 72, 'I': 73, 'J': 74, 'K': 75, 'L': 76, 'M': 77,
-    'N': 78, 'O': 79, 'P': 80, 'Q': 81, 'R': 82, 'S': 83, 'T': 84, 'U': 85, 'V': 86, 'W': 87, 'X': 88, 'Y': 89, 'Z': 90
-}
-
-
-def press_key(key_code: int) -> None:
-    """
-    按下按键
-
-    :param key_code: 按键值
-    :return: None
-    """
-    win32api.keybd_event(key_code, win32api.MapVirtualKey(key_code, 0), 0, 0)
-
-
-def release_key(key_code: int) -> None:
-    """
-    抬起按键
-
-    :param key_code: 按键值
-    :return: None
-    """
-    win32api.keybd_event(key_code, win32api.MapVirtualKey(
-            key_code, 0), win32con.KEYEVENTF_KEYUP, 0)
-
-
-def press_and_release_key(key: int | str) -> None:
-    """
-    按一下按键
-
-    :param key: 按键名/按键值
-    :return: None
-    """
-    if isinstance(key, str):
-        press_key(key_map[key.upper()])
-        time.sleep(random.uniform(0.02, 0.1))
-        release_key(key_map[key.upper()])
-    elif isinstance(key, int):
-        press_key(key)
-        time.sleep(random.uniform(0.02, 0.1))
-        release_key(key)
-
-
-def press_and_release_muit_key(keys: list) -> None:
-    """
-    按下多个按键
-
-    :param keys: 要按下的按键列表
-    :return: None
-    """
-    for _ in keys:
-        if isinstance(_, str):
-            press_key(key_map[_.upper()])
-        elif isinstance(_, int):
-            press_key(_)
-    time.sleep(random.uniform(0.02, 0.1))
-    for _ in keys:
-        if isinstance(_, str):
-            release_key(key_map[_.upper()])
-        elif isinstance(_, int):
-            release_key(_)
-
 
 def check_focus_on() -> None:
     """
-    检查鼠标焦点是都在游戏里
+    检查鼠标焦点是否在游戏里
 
     :return: None
     """
@@ -109,32 +41,65 @@ def check_focus_on() -> None:
             time.sleep(0.5)
 
 
-def play(music_score: list) -> None:
+def play_single(music_score: str) -> int:
+    """
+    演奏单个音符/音符组合
+
+    :param music_score: 单个按键/按键组合
+    :return: 按键个数
+    """
+    if music_score == '0':
+        logger.debug('此处有空音符')
+        return 0
+    elif music_score.startswith('(') and music_score.endswith(')'):
+        tmp = music_score[1:-1]
+        if not regex.match('^[a-zA-Z]+', tmp):
+            raise ValueError('乐谱格式错误')
+        logger.info(f'按下按键组合：{music_score[1:-1]}')
+        if DRY_RUN:
+            return len(music_score[1:-1])
+        pool.submit(press_and_release_muit_key, tmp)
+        return len(music_score[1:-1])
+    elif regex.match('^[a-zA-Z]$', music_score):
+        logger.info(f'按下按键：{music_score}')
+        if DRY_RUN:
+            return 1
+        pool.submit(press_and_release_key, music_score)
+        return 1
+    else:
+        raise ValueError('乐谱格式错误')
+
+
+def play(music_scores: list) -> None:
     """
     演奏
 
-    :param music_score: 从谱读到的单个按键组成的列表
+    :param music_scores: 从谱读到的单个按键组成的列表
     :return: None
     """
-    logger.debug(f'获取到的音符列表如下：{music_score}')
+    logger.debug(f'获取到的音符列表如下：{music_scores}')
     time.sleep(0.5)
     notes_speed = round(60 / BPM, 5)
     logger.info(f'BPM: {BPM}')
+    if BPM >= 600:
+        raise ValueError('BPM 过快')
     logger.info(f'每个节拍间隔{notes_speed}s')
     logger.info('准备开始演奏，演奏过程中清保持焦点在游戏窗口')
     time.sleep(0.5)
     step = 0
 
-    for i in music_score:
+    for music_score in music_scores:
         check_focus_on()
 
-        if i.startswith('#'):
-            notes_speed = round(60 / int(i[1:]), 5)
-            logger.info(f'BPM已更改为: {i[1:]}')
+        if music_score.startswith('#'):
+            notes_speed = round(60 / int(music_score[1:]), 5)
+            logger.info(f'BPM已更改为: {music_score[1:]}')
+            if BPM >= 600:
+                raise ValueError('BPM 过快')
             logger.info(f'每个节拍间隔{notes_speed}s')
             continue
-        elif i.startswith('//'):
-            logger.info(f'注释 → {i[2:]}')
+        elif music_score.startswith('//'):
+            logger.info(f'注释 → {music_score[2:]}')
             continue
         else:
             time.sleep(notes_speed)
@@ -147,27 +112,7 @@ def play(music_score: list) -> None:
             time.sleep(notes_speed / 2)
             logger.debug('sleep: %f', notes_speed / 2)
 
-        if i == '0':
-            logger.debug('此处有空音符')
-            pass
-        elif i.startswith('(') and i.endswith(')'):
-            tmp = i[1:-1]
-            if not regex.match('^[a-zA-Z]+', tmp):
-                raise ValueError('乐谱格式错误')
-            logger.info(f'按下按键组合：{i[1:-1]}')
-            if DRY_RUN:
-                continue
-            pool.submit(press_and_release_muit_key, tmp)
-            step += 1
-            continue
-        elif regex.match('^[a-zA-Z]$', i):
-            logger.info(f'按下按键：{i}')
-            if DRY_RUN:
-                continue
-            pool.submit(press_and_release_key, i)
-            step += 1
-        else:
-            raise ValueError('乐谱格式错误')
+        step += play_single(music_score)
     logger.info(f'演奏完毕，共按下按键 {step} 次')
 
 
