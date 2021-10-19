@@ -40,7 +40,7 @@ Z 0 B 0 D 0 B 0 D
 
 0 0 0 0 0 0 0 0
 
-#300 //银白的希望
+#260 //银白的希望
 A 0 0 0
 E 0 R T 0 0 0 0 0 0 0 M 0 0 0 0 0 0
 Y T 0 R E 0 W Q N 0 0 0
@@ -48,7 +48,7 @@ Q 0 W E 0 0 0 0 0 0 0 B 0 0 0 0 0 0
 R E 0 W Q 0 J H V 0 0 0
 H 0 J Q 0 0 0 Y 0 Y T B 0 0 0 0 0 0
 Y T 0 0 R E 0 0 R
-#330
+#290
 A 0 0 0 (AE) 0 R T A 0 0 0 (AE) 0 E W
 M 0 0 0 M 0 Y T M 0 R E M 0 W Q
 N 0 0 0 (NQ) 0 W E N 0 0 0 (NQ) 0 Q J

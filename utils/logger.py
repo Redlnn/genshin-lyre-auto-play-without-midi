@@ -9,7 +9,7 @@ from colorlog import ColoredFormatter
 __all__ = ['logger']
 
 logger = logging.getLogger('test')
-console_fms = "%(log_color)s[%(asctime)s.%(msecs)03d %(levelname)s] %(message)s"
+console_fms = "%(log_color)s[%(asctime)s.%(msecs)04d %(levelname)s] %(message)s"
 # datefmt = "%Y-%m-%d %H:%M:%S"
 date_fmt = "%H:%M:%S"
 
