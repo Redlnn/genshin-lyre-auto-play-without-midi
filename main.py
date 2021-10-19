@@ -132,12 +132,21 @@ def main() -> None:
 
 if __name__ == '__main__':
     if ctypes.windll.shell32.IsUserAnAdmin() or DRY_RUN:
-        if not DRY_RUN:
-            if not set_focus('YuanShen.exe'):
-                logger.error('找不到原神游戏进程，程序即将退出')
-                sys.exit(1)
+        logger.info('genshin-lyre-auto-play-without-midi')
+        logger.info('无需MIDI文件的原神风物之诗琴自动演奏程序')
+        logger.info('作者：Red_lnn')
+        logger.info('https://github.com/Redlnn/genshin-lyre-auto-play-without-midi/')
+        logger.info('==============================================================')
+        time.sleep(0.5)
         try:
-            main()
+            if DRY_RUN:
+                main()
+            else:
+                if not set_focus('YuanShen.exe'):
+                    logger.error('找不到原神游戏进程，程序即将退出')
+                else:
+                    logger.info('已自动切换到原神游戏窗口')
+                    main()
         except KeyboardInterrupt:
             pass
         except ValueError as e:
@@ -146,8 +155,7 @@ if __name__ == '__main__':
             logger.error(traceback.format_exc())
         finally:
             pool.shutdown()
-            if not DRY_RUN:
-                os.system('pause')
+            os.system('pause')
     else:
         ctypes.windll.shell32.ShellExecuteW(
                 None, 'runas', sys.executable, __file__, None, 1)
