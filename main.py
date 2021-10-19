@@ -4,10 +4,11 @@
 import ctypes
 import logging
 import os
-import regex
 import sys
 import time
 import traceback
+
+import regex
 
 from config import BPM, DEBUG, DRY_RUN, GAME_PROCESS_NAME, MUSIC_SCORE
 from utils.focus import check_focus, set_focus
@@ -18,7 +19,6 @@ if DEBUG:
     logger.setLevel(logging.DEBUG)
 else:
     logger.setLevel(logging.INFO)
-
 
 # 此处前后顺序会影响 nmn_converter() 的结果，单个数字必须放最后
 music_score_map = {
@@ -93,10 +93,12 @@ def play_single(music_score: str) -> int:
         return 0
     elif music_score.startswith('(') and music_score.endswith(')'):
         tmp = music_score[1:-1]
+
         if regex.match('^[+\\-1-9]+', tmp):
             tmp = nmn_converter(tmp)
         elif not regex.match('^[a-zA-Z]+', tmp):
             raise ValueError('乐谱格式错误')
+
         logger.info(f'按下组合键：{tmp}')
         if DRY_RUN:
             return len(tmp)
@@ -118,11 +120,12 @@ def play_single(music_score: str) -> int:
         raise ValueError('乐谱格式错误')
 
 
-def play(music_scores: list, notes_speed: float) -> None:
+def play(music_scores: list, notes_interval: float) -> None:
     """
     演奏
 
     :param music_scores: 从谱读到的单个按键组成的列表
+    :param notes_interval: 按键间隔
     :return: None
     """
     logger.debug(f'获取到的音符列表如下：{music_scores}')
@@ -135,20 +138,20 @@ def play(music_scores: list, notes_speed: float) -> None:
         check_focus_on()
 
         if music_score.startswith('#'):
-            notes_speed = round(60 / int(music_score[1:]), 5)
+            notes_interval = round(60 / int(music_score[1:]), 5)
             logger.info('=====================')
             logger.info(f'BPM已更改为: {music_score[1:]}')
             if BPM >= 600:
                 raise ValueError('BPM 过快')
-            logger.info(f'每个节拍间隔{notes_speed}s')
+            logger.info(f'每个节拍间隔{notes_interval}s')
             logger.info('=====================')
             continue
         elif music_score.startswith('//'):
             logger.info(f'注释 → {music_score[2:]}')
             continue
         else:
-            time.sleep(notes_speed - 0.04)  # 减 0.04 是给 log 记录和其他操作占用时间的补偿
-            logger.debug('sleep: %f', notes_speed)
+            time.sleep(notes_interval - 0.04)  # 减 0.04 是给 log 记录和其他操作占用时间的补偿
+            logger.debug('sleep: %f', notes_interval)
 
         step += play_single(music_score)
     logger.info(f'演奏完毕，共按下按键 {step} 次')
@@ -160,17 +163,17 @@ def main() -> None:
 
     :return: None
     """
-    notes_speed = round(60 / BPM, 5)
+    notes_interval = round(60 / BPM, 5)
     logger.info(f'BPM: {BPM}')
     if BPM >= 600:
         raise ValueError('BPM 过快')
-    logger.info(f'每个节拍间隔{notes_speed}s')
+    logger.info(f'每个节拍间隔{notes_interval}s')
     logger.info('读取乐谱内容')
     with open(os.path.join(os.path.dirname(__file__), 'spectrums', MUSIC_SCORE), 'r', encoding='utf-8') as f:
         txt = f.read()
     txt = txt.replace('\n', ' ').replace('\r', '').split()
     logger.info('读取完毕')
-    play(txt, notes_speed)
+    play(txt, notes_interval)
 
 
 if __name__ == '__main__':
