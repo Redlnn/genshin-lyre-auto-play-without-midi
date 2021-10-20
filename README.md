@@ -4,9 +4,9 @@
 
 使用普通的文本文件作为谱子（存放在 `spectrums` 文件夹中），谱子内写键盘按键或手机谱（即简谱符号）
 
-[B站演示视频](https://www.bilibili.com/video/BV1C3411C7n6/)
+[演示视频1](https://www.bilibili.com/video/BV1C3411C7n6/) | [演示视频2](https://www.bilibili.com/video/BV1dT4y1o7dY/) | [演示视频3](https://www.bilibili.com/video/BV1Bq4y157Ke/)
 
-目前暂不提供可执行文件（人话：直接打开就能用的程序）
+目前暂不提供可执行文件（人话：直接打开就能用的程序），但是可自己配置环境运行
 
 注意：因为没有使用 MIDI 文件，所以每个音符的间隔和时长都是固定的，因此不太完美比较生硬，不及真人弹奏和 MIDI
 
