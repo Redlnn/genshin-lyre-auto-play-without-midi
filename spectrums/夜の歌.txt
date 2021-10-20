@@ -1,0 +1,38 @@
+//简谱扒谱：龙斯明
+//来源：https://www.gangqinpu.com/jianpu/894328.htm
+//Red_lnn修改以使程序可以使用
+
+#180
+(WU) T (EQ) T (RW) T (EQ) T (WU) T (EQ) T
+(QY) R (WU) R (QE) R (WU) R (YQ) R (WU) R
+
+(JWT) C B M S G (BA) C (FB) B (DA) 0
+(HF) 0 V N A F (AFH) X N A F H
+(SGJ) 0 (DQ) 0 (FW) 0 T 0 0 0 0
+
+(AZ) B D B G B (ADC) B (SF) B (DG) B
+(FHV) A (GJ) A (HQ) A (DGC) A Q G D A
+(SFX) N S (DG) (SF) B (ADZ) B (SF) B (DG) B
+
+(AS) X B A S G (MS) 0 A 0 S 0
+
+(CBA) B (DZ) B (ADGBC) B (BAD) B (SFB) B (DGA) B
+(FH) Z N A (HQA) A (DGC) Z (QB) G D A
+(DHQ) C N J (HZ) X (MGC) B C X (BA) Z
+
+(SXN) C X D (SXN) Z (CBAZ) B (QD) G D A
+
+(HF) Z V N (FHA) F (FH) A (GJ) A (HQ) A
+
+(DGQ) Z C B A D (AG) D (GE) Q G D
+(MDG) C B (GM) (GS) D (AG) Z F X D C
+(NAF) V X N A F (MSG) X B M S G
+(SJ) G (DQ) G (FW) G (DQ) G (SJ) G S M
+
+(CBA) Z (DC) Z (GB) C (MD) B (SFC) B (ADGC) B
+(FH) Z (GJN) A (HQF) H (MDG) Z (QB) G D A
+(DHQ) C N J (HZX) X (MGC) B C X (BA) Z
+(SXN) C X D (SXN) Z (CBAZ) B (QD) G D A
+
+(WU) T (EQ) T (RW) T (EQ) T (WU) T (EQ) T
+(QY) R (WU) R (EQ) R (WU) R (QY) R (WU) R (WU)
