@@ -96,7 +96,7 @@ def play_single(music_score: str) -> int:
 
         if regex.match('^[+\\-1-9]+', tmp):
             tmp = nmn_converter(tmp)
-        elif not regex.match('^[a-zA-Z]+', tmp):
+        elif not regex.match('^[a-hjmnq-zA-HJMNQ-Z]+', tmp):
             raise ValueError('乐谱格式错误')
 
         logger.info(f'按下组合键：{tmp}')
@@ -104,7 +104,7 @@ def play_single(music_score: str) -> int:
             return len(tmp)
         press_and_release_muit_key(tmp)
         return len(tmp)
-    elif regex.match('^[a-zA-Z]$', music_score):
+    elif regex.match('^[a-hjmnq-zA-HJMNQ-Z]$', music_score):
         logger.info(f'按下单个键：{music_score}')
         if DRY_RUN:
             return 1
