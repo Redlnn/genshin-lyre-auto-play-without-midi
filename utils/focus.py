@@ -57,8 +57,7 @@ def set_focus(process_name: str) -> bool:
             user32dll.LockSetForegroundWindow(2)
             if user32dll.IsIconic(hwnd):
                 win32gui.SendMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_RESTORE, 0)
-            user32dll.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 0, 0,
-                                   win32con.SWP_NOSIZE | win32con.SWP_NOMOVE)
+            user32dll.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOSIZE | win32con.SWP_NOMOVE)
             user32dll.SetForegroundWindow(hwnd)
             user32dll.SetActiveWindow(hwnd)
         return True

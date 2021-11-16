@@ -40,7 +40,7 @@ Z 0 B 0 D 0 B 0 D
 
 0 0 0 0 0 0 0 0
 
-#260 //银白的希望
+#250 //银白的希望
 A 0 0 0
 E 0 R T 0 0 0 0 0 0 0 M 0 0 0 0 0 0
 Y T 0 R E 0 W Q N 0 0 0
@@ -48,7 +48,7 @@ Q 0 W E 0 0 0 0 0 0 0 B 0 0 0 0 0 0
 R E 0 W Q 0 J H V 0 0 0
 H 0 J Q 0 0 0 Y 0 Y T B 0 0 0 0 0 0
 Y T 0 0 R E 0 0 R
-#290
+#270
 A 0 0 0 (AE) 0 R T A 0 0 0 (AE) 0 E W
 M 0 0 0 M 0 Y T M 0 R E M 0 W Q
 N 0 0 0 (NQ) 0 W E N 0 0 0 (NQ) 0 Q J
@@ -66,7 +66,7 @@ B 0 0 0 (BJ) 0 Q W B 0 E Q B 0 J Q
 
 0 0 0 0 0 0 0 0
 
-#180 //雪掩的往事
+#160 //雪掩的往事
 (VE) R E H E R E H E R E H E R E H
 (CE) Y E H E Y E H W Y W H W Y W G
 (XW) E W G W E W G W E W G W E W G
@@ -75,7 +75,7 @@ B 0 0 0 (BJ) 0 Q W B 0 E Q B 0 J Q
 (VQ) T Q F Q T Q F J T J F J T J F
 (CJ) Q J D J Q J D J Q J D J Q J D
 H J H D H J H D H J Q W
-#150
+#130
 (CE) Y E H W Y E G
 (XW) E W G W E W G
 (ZW) T W G Q T Q F

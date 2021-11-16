@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "genshin-lyre-auto-play-without-midi"
+version = "0.1.0"
+description = "无需MIDI文件的原神风物之诗琴自动演奏程序"
+authors = ["Redlnn <w731347477@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+regex = "^2021.11.10"
+psutil = "^5.8.0"
+pypiwin32 = "^223"
+pywin32 = "^302"
+pywin32-ctypes = "^0.2.0"
+loguru = "^0.5.3"
+asyncio = "^3.4.3"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+black = "^21.10b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"

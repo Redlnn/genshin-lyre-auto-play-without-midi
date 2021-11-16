@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# import random
-# import time
 import win32api
 import win32con
 
-__all__ = [
-    'press_key', 'release_key', 'press_and_release_key', 'press_and_release_muit_key'
-]
+__all__ = ['press_key', 'release_key', 'press_and_release_key', 'press_and_release_muit_key']
 
 key_map = {
     'A': 65,
@@ -31,7 +27,7 @@ key_map = {
     'W': 87,
     'X': 88,
     'Y': 89,
-    'Z': 90
+    'Z': 90,
 }
 
 
@@ -52,8 +48,7 @@ def release_key(key_code: int) -> None:
     :param key_code: 按键值
     :return: None
     """
-    win32api.keybd_event(key_code, win32api.MapVirtualKey(
-            key_code, 0), win32con.KEYEVENTF_KEYUP, 0)
+    win32api.keybd_event(key_code, win32api.MapVirtualKey(key_code, 0), win32con.KEYEVENTF_KEYUP, 0)
 
 
 def press_and_release_key(key: int | str) -> None:
@@ -65,11 +60,9 @@ def press_and_release_key(key: int | str) -> None:
     """
     if isinstance(key, str):
         press_key(key_map[key.upper()])
-        # time.sleep(random.uniform(0.02, 0.1))
         release_key(key_map[key.upper()])
     elif isinstance(key, int):
         press_key(key)
-        # time.sleep(random.uniform(0.02, 0.1))
         release_key(key)
 
 
@@ -85,7 +78,6 @@ def press_and_release_muit_key(keys: str) -> None:
             press_key(key_map[_.upper()])
         elif isinstance(_, int):
             press_key(_)
-    # time.sleep(random.uniform(0.02, 0.1))
     for _ in keys:
         if isinstance(_, str):
             release_key(key_map[_.upper()])
