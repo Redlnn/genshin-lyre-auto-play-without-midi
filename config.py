@@ -3,4 +3,4 @@
 
 GAME_PROCESS_NAME = 'YuanShen.exe'  # 游戏进程名，没事别乱改
 DRY_RUN = False  # 测试运行，不真正按下按键，不申请管理员权限
-DEBUG = True
+DEBUG = False
