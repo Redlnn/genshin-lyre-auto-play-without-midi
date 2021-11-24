@@ -34,7 +34,9 @@ url = "https://mirrors.aliyun.com/pypi/simple/"
 
 [tool.black]
 line-length = 120
-target-version = ['py38']
+target-version = ['py38', 'py39', 'py310']
+skip-string-normalization = true
+safe = true
 
 [tool.isort]
 profile = "black"

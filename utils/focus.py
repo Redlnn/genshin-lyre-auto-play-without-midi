@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from ctypes import CDLL, byref, c_ulong
+
 import psutil
 import win32com.client
 import win32con
 import win32gui
 import win32process
-from ctypes import byref, c_ulong, CDLL
 
 __all__ = ['check_focus', 'set_focus']
 
