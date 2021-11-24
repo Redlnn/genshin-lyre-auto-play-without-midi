@@ -127,7 +127,7 @@ def play_single(music_score: str) -> int:
         return 1
     elif music_score in music_score_map.keys():
         pause = False
-        logger.info(f'按下单个键：{music_score_map[music_score]}')
+        logger.debug(f'按下单个键：{music_score_map[music_score]}')
         if DRY_RUN:
             return 1
         press_and_release_key(music_score_map[music_score])
@@ -202,7 +202,7 @@ async def main() -> None:
                 continue
             elif spectrum_id == '0':
                 print('你选择了退出程序...\n')
-                return
+                exit()
             try:
                 spectrum = spectrum_list[int(spectrum_id) - 1]
             except IndexError:
@@ -221,7 +221,7 @@ async def main() -> None:
                     bpm = input('请输入你选择的BPM并按回车键：')
                     if bpm == '0':
                         print('你选择了退出程序...\n')
-                        return
+                        exit()
                     elif bpm.isdigit():
                         bpm = int(bpm)
                         break
@@ -260,18 +260,18 @@ async def main() -> None:
 
 if __name__ == '__main__':
     if ctypes.windll.shell32.IsUserAnAdmin() or DRY_RUN:
-        print(' > genshin-lyre-auto-play-without-midi')
-        print(' > 无需MIDI文件的原神风物之诗琴自动演奏程序')
-        print(' > 作者：Red_lnn')
-        print(' > 链接：https://github.com/Redlnn/genshin-lyre-auto-play-without-midi/')
-        loop = asyncio.new_event_loop()
-        try:
-            loop.run_until_complete(main())
-        except KeyboardInterrupt:
-            pass
-        except Exception as e:
-            logger.exception(e)
-        finally:
-            os.system('pause')
+        while True:
+            os.system('cls')
+            print(' > genshin-lyre-auto-play-without-midi')
+            print(' > 无需MIDI文件的原神风物之诗琴自动演奏程序')
+            print(' > 作者：Red_lnn')
+            print(' > 链接：https://github.com/Redlnn/genshin-lyre-auto-play-without-midi/')
+            loop = asyncio.new_event_loop()
+            try:
+                loop.run_until_complete(main())
+            except KeyboardInterrupt:
+                pass
+            except Exception as e:
+                logger.exception(e)
     else:
         ctypes.windll.shell32.ShellExecuteW(None, 'runas', sys.executable, __file__, None, 1)
