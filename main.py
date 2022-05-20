@@ -59,18 +59,18 @@ def check_focus_on() -> None:
 
     :return: None
     """
-    if not check_focus(GAME_PROCESS_NAME):
-        logger.warning('你的窗口焦点已离开原神游戏窗口，请在 10秒 内返回，否则程序自动退出')
-        test = 0
-        while True:
-            test += 1
-            if test >= 20:
-                logger.error('窗口焦点离开原神游戏窗口过久')
-                return False
-            if check_focus(GAME_PROCESS_NAME):
-                break
-            time.sleep(0.5)
+    if check_focus(GAME_PROCESS_NAME):
         return True
+    logger.warning('你的窗口焦点已离开原神游戏窗口，请在 10秒 内返回，否则程序自动退出')
+    test = 0
+    while True:
+        test += 1
+        if test >= 20:
+            logger.error('窗口焦点离开原神游戏窗口过久')
+            return False
+        if check_focus(GAME_PROCESS_NAME):
+            break
+        time.sleep(0.5)
     return True
 
 
@@ -84,11 +84,10 @@ def nmn_converter(nmn: str) -> str:
     """
     if len(nmn) == 1:
         return music_score_map[nmn]
-    else:
-        result = nmn
-        for i, j in music_score_map.items():
-            result = result.replace(i, j)
-        return result
+    result = nmn
+    for i, j in music_score_map.items():
+        result = result.replace(i, j)
+    return result
 
 
 def play_single(music_score: str) -> int:

@@ -51,15 +51,14 @@ def check_focus(process_name: str) -> bool:
 
 
 def set_focus(process_name: str) -> bool:
-    pid = get_pid_for_pname(process_name)
-    if pid:
-        for hwnd in get_hwnds_for_pid(pid):
-            shell.SendKeys('%')
-            user32dll.LockSetForegroundWindow(2)
-            if user32dll.IsIconic(hwnd):
-                win32gui.SendMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_RESTORE, 0)
-            user32dll.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOSIZE | win32con.SWP_NOMOVE)
-            user32dll.SetForegroundWindow(hwnd)
-            user32dll.SetActiveWindow(hwnd)
-        return True
-    return False
+    if not (pid := get_pid_for_pname(process_name)):
+        return False
+    for hwnd in get_hwnds_for_pid(pid):
+        shell.SendKeys('%')
+        user32dll.LockSetForegroundWindow(2)
+        if user32dll.IsIconic(hwnd):
+            win32gui.SendMessage(hwnd, win32con.WM_SYSCOMMAND, win32con.SC_RESTORE, 0)
+        user32dll.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOSIZE | win32con.SWP_NOMOVE)
+        user32dll.SetForegroundWindow(hwnd)
+        user32dll.SetActiveWindow(hwnd)
+    return True
